@@ -1,0 +1,21 @@
+season: "2026-27" # logical partition; API has no season parameter for current endpoints
+paths:
+  raw: data/raw
+  processed: data/processed
+  analytics: data/analytics
+  database: data/fpl.duckdb
+http:
+  timeout_seconds: 20
+  max_retries: 4
+  min_request_interval_seconds: 0.4
+refresh:
+  bootstrap_max_age_hours: 6
+  fixtures_max_age_hours: 6
+  live_max_age_minutes: 15
+historical:
+  source_repository: "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League"
+  # Immutable git revision of the public archive; do not replace with master/main.
+  commit: "f2090d378ebd1b0c3d14884770dde95f38c50a0d"
+  seasons: ["2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
+  decay_rate: 0.45
+  prior_equivalent_90s: 12
