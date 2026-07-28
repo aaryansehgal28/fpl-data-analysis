@@ -7,3 +7,4 @@ data/processed/
 data/*.duckdb
 .DS_Store.DS_Store
 src/*.egg-info/
+.DS_Store
